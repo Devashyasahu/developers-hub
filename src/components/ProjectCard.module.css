@@ -29,6 +29,14 @@
   opacity: 0.5;
 }
 
+.projectImage {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .projectImage {
+  transform: scale(1.05);
+}
+
 .placeholderTitle {
   font-size: 2rem;
   font-weight: 800;
@@ -139,7 +147,7 @@
 }
 
 .primaryBtn {
-  flex: 2;
+  flex: 1.5;
   background: var(--accent-gradient);
   color: white;
   text-align: center;
@@ -165,6 +173,26 @@
   font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.2s ease;
+}
+
+.githubBtn {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.githubBtn:hover {
+  background: var(--surface-hover);
+  border-color: var(--text-muted);
 }
 
 .secondaryBtn:hover {

@@ -23,18 +23,28 @@ export const ProjectCard = ({ project }: Props) => {
           <div className={styles.overlay}>
              <span className={styles.highlight}>{project.highlight}</span>
           </div>
-          <div 
-            className={styles.imagePlaceholder} 
-            style={{ 
-              background: project.id === 'dronosour' ? 'radial-gradient(circle at top right, #00FFC2, #050505)' :
-                          project.id === 'workzone' ? 'radial-gradient(circle at top right, #7000FF, #050505)' :
-                          project.id === 'life-road-map' ? 'radial-gradient(circle at top right, #0085FF, #050505)' :
-                          project.id === 'orion-pulse' ? 'radial-gradient(circle at top right, #FF00C1, #050505)' :
-                          'radial-gradient(circle at top right, #FFD700, #050505)'
-            }}
-          >
-            <h4 className={styles.placeholderTitle}>{project.title}</h4>
-          </div>
+          {project.image ? (
+            <Image 
+              src={project.image} 
+              alt={project.title}
+              fill
+              className={styles.projectImage}
+              style={{ objectFit: 'cover' }}
+            />
+          ) : (
+            <div 
+              className={styles.imagePlaceholder} 
+              style={{ 
+                background: project.id === 'dronosour' ? 'radial-gradient(circle at top right, #00FFC2, #050505)' :
+                            project.id === 'workzone' ? 'radial-gradient(circle at top right, #7000FF, #050505)' :
+                            project.id === 'life-road-map' ? 'radial-gradient(circle at top right, #0085FF, #050505)' :
+                            project.id === 'orion-pulse' ? 'radial-gradient(circle at top right, #FF00C1, #050505)' :
+                            'radial-gradient(circle at top right, #FFD700, #050505)'
+              }}
+            >
+              <h4 className={styles.placeholderTitle}>{project.title}</h4>
+            </div>
+          )}
         </div>
 
         <div className={styles.content}>
@@ -72,6 +82,11 @@ export const ProjectCard = ({ project }: Props) => {
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>
               Visit Live Site
             </a>
+            {project.githubUrl && (
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className={styles.githubBtn}>
+                GitHub
+              </a>
+            )}
             <button className={styles.secondaryBtn} onClick={() => setIsBuildSheetOpen(true)}>
               Build Sheet
             </button>

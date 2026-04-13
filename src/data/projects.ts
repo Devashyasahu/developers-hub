@@ -21,6 +21,7 @@ export interface Project {
   highlight: string;
   buildSheet: BuildSheet;
   liveUrl: string;
+  githubUrl?: string;
   image: string;
 }
 
@@ -126,18 +127,50 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "hulk-workzone",
+    title: "Hulk's Workzone",
+    pitch: "A high-intensity, dark-themed gym landing page designed for professional functional training centers.",
+    highlight: "Visual Impact",
+    talkingPoint: "Aggressive neon aesthetic with Scissor-Reveal animations.",
+    flex: "Custom GSAP reveal effects and high-performance layout.",
+    liveUrl: "https://hulk-s-work-zone.vercel.app/",
+    githubUrl: "https://github.com/Devashyasahu/Hulk-s-work-zone",
+    image: "/projects/hulk-workzone.png",
+    buildSheet: {
+      architecture: "Next.js with CSS Modules",
+      logic: "GSAP ScrollTrigger for text peeling and reveal effects",
+      design: "Industrial Gym aesthetic: #00FF1F (Neon Green) on #0A0A0A",
+    },
+  },
+  {
     id: "mlworkx",
     title: "MLWorkx",
-    pitch: "Where web development meets machine learning or technical automation.",
+    pitch: "Enterprise-grade platform for electronics manufacturing and technical automation solutions.",
     highlight: "Technical Depth",
-    talkingPoint: "Integration of complex APIs and technical data visualization.",
-    flex: "Handling complex data structures efficiently.",
-    liveUrl: "https://mlworkx-ai.vercel.app",
-    image: "/projects/mlworkx.jpg",
+    talkingPoint: "Professional B2B interface with clean data visualization.",
+    flex: "Sophisticated architecture for industrial client portals.",
+    liveUrl: "https://mlworkx.com",
+    image: "/projects/mlworkx.png",
     buildSheet: {
-      architecture: "Next.js with D3.js for data visualization",
-      logic: "Async API data streaming and processing",
-      design: "Data-heavy dashboard with clear visual hierarchy",
+      architecture: "Next.js 14 App Router",
+      logic: "Scalable component-driven architecture for complex industries",
+      design: "Clean, technical 'Space-Age' aesthetic with teal accents",
+    },
+  },
+  {
+    id: "terraforce",
+    title: "TerraForce Construction",
+    pitch: "A powerhouse digital presence for heavy-duty construction and industrial machinery services.",
+    highlight: "Industrial Scale",
+    talkingPoint: "Integrated project calculators and machinery fleet management UI.",
+    flex: "Heavy-duty aesthetic with focus on site reliability and scale.",
+    liveUrl: "https://construction-page-demo.vercel.app/",
+    githubUrl: "https://github.com/Devashyasahu/construction-page-demo",
+    image: "/projects/terraforce.png",
+    buildSheet: {
+      architecture: "Next.js + Tailwind CSS for rapid scaling",
+      logic: "Interactive material and project estimation calculators",
+      design: "High-contrast Industrial Yellow (#FFD700) and Matte Black",
     },
   },
 ];
